@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vaishnavi Singh · Supply Chain Portfolio</title>
+<meta name="description" content="Vaishnavi Singh — supply chain planning, procurement, demand forecasting and inventory analytics. M.S. Technology Leadership & Management, Purdue University Northwest.">
+<meta name="theme-color" content="#08201f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: confident and warm — a planner who moves goods and decisions forward.
+   IDEA: a live supply network at night — routes, moving containers, tracking scans and shipping labels.
+   PICTURE: an animated network orb (supplier → plant → warehouse → hospital) with result chips orbiting it.
+   COLOUR and TYPE: deep harbour teal ground, container orange lead, signal amber and sea-glass support; Sora + Inter.
+   LAYOUT: glass nav pill, hero text beside the network, SCOR ticker, then glass sections to a bright contact band. */
+:root{color-scheme:dark;--bg:#08201f;--bg2:#0b2b2a;--ink:#eaf4f1;--mute:#9dbab4;--line:rgba(234,244,241,.11);
+--glass:rgba(255,255,255,.045);--or:#ff7a2f;--am:#ffc24b;--sea:#5fe0c6;--glow:rgba(255,122,47,.35)}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;color:var(--ink);font:16.5px/1.65 Inter,system-ui,sans-serif;overflow-x:clip;
+background:radial-gradient(1200px 700px at 85% -10%,rgba(255,122,47,.16),transparent 60%),radial-gradient(900px 600px at -10% 30%,rgba(95,224,198,.10),transparent 60%),linear-gradient(180deg,var(--bg),var(--bg2) 40%,#0a2624 75%,var(--bg));}
+html{background:var(--bg)}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:radial-gradient(rgba(234,244,241,.09) 1px,transparent 1px);background-size:28px 28px;mask-image:linear-gradient(#000,transparent 85%)}
+h1,h2,h3{font-family:Sora,Inter,sans-serif;line-height:1.08;text-wrap:balance;margin:0}
+h2{font-size:clamp(30px,4.2vw,48px);font-weight:800}
+h3{font-size:19px;font-weight:700}
+a{color:var(--am)}p{margin:0 0 1em;max-width:68ch}
+.wrap{max-width:1200px;margin:0 auto}
+.band{padding:clamp(56px,8vw,110px) max(5vw,16px)}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;z-index:99;background:var(--ink);color:var(--bg);padding:8px 12px}
+:focus-visible{outline:3px solid var(--am);outline-offset:3px}
+.kicker{display:inline-flex;align-items:center;gap:10px;color:var(--sea);font-weight:600;font-size:14px;margin-bottom:14px}
+.kicker::before{content:"";width:28px;height:2px;background:var(--sea)}
+.glass{background:var(--glass);border:1px solid var(--line);border-radius:20px;backdrop-filter:blur(12px)}
+.mute{color:var(--mute)}
+/* nav */
+header{position:sticky;top:12px;z-index:30;padding:0 max(4vw,12px)}
+.nav{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:10px 12px 10px 22px;border-radius:18px;background:rgba(8,32,31,.72);border:1px solid var(--line);backdrop-filter:blur(14px)}
+.logo{font:800 22px Sora,sans-serif;color:var(--ink);text-decoration:none;margin-right:auto}.logo b{color:var(--or)}
+.nav ul{display:flex;gap:2px;list-style:none;margin:0;padding:0}
+.nav ul a{display:block;padding:10px 12px;color:var(--mute);text-decoration:none;font-size:15px;font-weight:500;border-radius:10px}
+.nav ul a:hover{color:var(--ink);background:rgba(255,255,255,.06)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;padding:0 22px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;color:var(--ink);border:1px solid var(--line);background:rgba(255,255,255,.05);cursor:pointer;font-family:inherit;transition:transform .2s,box-shadow .2s}
+.btn.pri{background:linear-gradient(135deg,var(--or),#ff9a4a);border:0;color:#1d0d02;box-shadow:0 10px 30px -8px var(--glow)}
+.btn:hover{transform:translateY(-2px)}.btn svg{width:16px;height:16px}
+.menu{display:none}
+@media(max-width:940px){.nav ul{display:none;position:absolute;top:calc(100% + 8px);left:max(4vw,12px);right:max(4vw,12px);flex-direction:column;padding:10px;border-radius:16px;background:rgba(8,32,31,.96);border:1px solid var(--line)}.nav ul.open{display:flex}.menu{display:inline-flex}.nav .hire{display:none}}
+/* hero */
+.hero{padding:clamp(40px,7vw,90px) max(5vw,16px) clamp(30px,5vw,60px)}
+.hgrid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.hero h1{font-size:clamp(42px,6.2vw,78px);font-weight:800;letter-spacing:-.02em}
+.hero h1 .dot{color:var(--or)}
+.hero .role{display:block;margin-top:8px;font-size:clamp(34px,5vw,64px)}
+.outline{color:transparent;-webkit-text-stroke:1.5px rgba(234,244,241,.55)}
+.grad{background:linear-gradient(90deg,var(--or),var(--am));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:18px;color:var(--mute);margin:22px 0 14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.tags span{font-size:13.5px;color:var(--sea);border:1px solid rgba(95,224,198,.3);border-radius:999px;padding:3px 12px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--mute);margin-bottom:18px}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--sea);box-shadow:0 0 0 4px rgba(95,224,198,.2);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(95,224,198,0)}}
+.net{position:relative;aspect-ratio:1;max-width:560px;width:100%;justify-self:center}
+.net svg{width:100%;height:100%;overflow:visible}
+.ring{transform-origin:260px 260px;animation:spin 40s linear infinite}.ring.r2{animation-duration:26s;animation-direction:reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.chip{position:absolute;display:flex;align-items:center;gap:10px;padding:9px 14px;border-radius:14px;background:rgba(10,40,39,.82);border:1px solid var(--line);backdrop-filter:blur(10px);font-size:13px;white-space:nowrap;box-shadow:0 12px 30px -12px rgba(0,0,0,.6);animation:float 6s ease-in-out infinite}
+.chip b{font:800 18px Sora,sans-serif;color:var(--am)}
+.chip:nth-of-type(2){animation-delay:-1.5s}.chip:nth-of-type(3){animation-delay:-3s}.chip:nth-of-type(4){animation-delay:-4.5s}
+@keyframes float{50%{transform:translateY(-10px)}}
+@media(max-width:900px){.hgrid{grid-template-columns:1fr}.net{max-width:460px}}
+@media(max-width:520px){.chip{font-size:11.5px;padding:7px 10px}.chip b{font-size:15px}}
+/* ticker */
+.ticker{border-block:1px solid var(--line);overflow:hidden;padding:16px 0;background:rgba(255,255,255,.02)}
+.track{display:flex;gap:42px;width:max-content;animation:tick 32s linear infinite;font:700 clamp(18px,2.4vw,26px) Sora,sans-serif;color:var(--mute)}
+.track span{display:flex;align-items:center;gap:42px}.track span::after{content:"";width:12px;height:12px;background:var(--or);transform:rotate(45deg)}
+.track span:nth-child(odd){color:var(--ink)}
+@keyframes tick{to{transform:translateX(-50%)}}
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:start}
+.label{position:relative;border-radius:22px;padding:18px;background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.14);box-shadow:0 40px 80px -30px rgba(0,0,0,.7),0 0 60px -20px var(--glow);transform-style:preserve-3d;transition:transform .15s ease-out}
+.lhead{display:flex;justify-content:space-between;align-items:center;font:700 12.5px Sora,sans-serif;color:var(--mute);padding:2px 4px 14px}
+.lhead em{font-style:normal;color:var(--sea);display:flex;align-items:center;gap:6px}.lhead em::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--sea)}
+.photo{position:relative;z-index:1;aspect-ratio:1;border-radius:16px;overflow:hidden;display:grid;place-items:center;background:radial-gradient(circle at 30% 20%,#ff9a4a,var(--or) 45%,#9b3a0b);font:800 84px Sora,sans-serif;color:#fff;border:3px solid rgba(255,255,255,.18)}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.stamp{position:absolute;top:66px;right:-8px;z-index:2;transform:rotate(12deg);font:800 12px Sora,sans-serif;color:var(--am);border:2px solid var(--am);border-radius:6px;padding:3px 8px;background:rgba(8,32,31,.85)}
+.lbody{padding:16px 6px 4px}
+.lbody .r{color:var(--sea);font-weight:600;font-size:13.5px}
+.lbody h3{font-size:30px;font-weight:800;margin:6px 0 4px}.lbody h3 b{color:var(--or)}
+.lrows{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0;font-size:13px}
+.lrows div{border-top:1px dashed var(--line);padding-top:8px}.lrows span{display:block;color:var(--mute);font-size:12px}
+.barcode{display:flex;gap:2px;height:44px;align-items:stretch;margin-top:6px}.barcode i{background:var(--ink);opacity:.85}
+.trk{display:flex;justify-content:space-between;font:600 12px Sora,sans-serif;color:var(--mute);margin-top:6px;letter-spacing:.08em}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:28px 0}
+.stat{padding:20px}.stat b{display:block;font:800 clamp(30px,3.4vw,42px) Sora,sans-serif;line-height:1}.stat b sup{color:var(--or);font-size:.6em}
+.stat span{font-size:14px;color:var(--mute)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.chips li{border:1px solid var(--line);background:rgba(255,255,255,.04);border-radius:10px;padding:6px 12px;font-size:14px}
+.interests{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px}
+.box{padding:20px 22px}.box h3{font-size:16px;margin-bottom:10px}.box p{font-size:15px;color:var(--mute);margin:0}
+@media(max-width:900px){.about{grid-template-columns:1fr}.label{max-width:380px;justify-self:center;width:100%}}
+@media(max-width:600px){.stats,.interests{grid-template-columns:1fr 1fr}.interests{grid-template-columns:1fr}}
+/* case */
+.head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:12px;margin-bottom:clamp(26px,4vw,46px)}
+.head p{color:var(--mute);margin:0}
+.flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-bottom:22px;counter-reset:f}
+.flow div{padding:18px;position:relative;counter-increment:f}
+.flow div::before{content:counter(f);display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:rgba(255,122,47,.14);color:var(--or);font:800 15px Sora,sans-serif;margin-bottom:12px}
+.flow div:not(:last-child)::after{content:"";position:absolute;top:34px;right:-12px;width:12px;height:2px;background:var(--or)}
+.flow h3{font-size:15.5px;margin-bottom:6px}.flow p{font-size:14px;color:var(--mute);margin:0}
+.cgrid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:18px}
+.panel{padding:22px}
+.ckey{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--mute);margin:8px 0 6px}
+.ckey span{display:inline-flex;align-items:center;gap:6px}.ckey i{width:16px;height:3px;background:var(--ink)}
+.ckey .f{background:none;border-top:3px dashed var(--sea);height:0}.ckey .s{height:10px;background:rgba(95,224,198,.2)}.ckey .r{background:var(--or)}
+.fig{position:relative;min-height:290px}.fig>svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.note{font-size:13px;color:var(--mute)}
+.bars{display:grid;gap:10px;margin:10px 0 20px}
+.bar{display:grid;grid-template-columns:120px minmax(0,1fr) 62px;gap:10px;align-items:center;font-size:14px}
+.bar div{height:22px;border-radius:6px;background:rgba(255,255,255,.06);overflow:hidden}.bar div i{display:block;height:100%;border-radius:6px;background:rgba(234,244,241,.35)}
+.bar.best div i{background:linear-gradient(90deg,var(--or),var(--am))}.bar em{font-style:normal;font-weight:600;text-align:right;white-space:nowrap}
+.calc label{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;font-size:14px;margin-top:12px}
+.calc output{font-weight:600;white-space:nowrap;color:var(--am)}
+.calc input{grid-column:1/-1;width:100%;accent-color:var(--or);height:28px}
+.res{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px;margin-top:14px;padding-top:12px;border-top:1px dashed var(--line)}
+.res b{font:800 clamp(30px,3.4vw,40px) Sora,sans-serif;white-space:nowrap}
+.lesson{margin:22px 0 0;padding:18px 22px;border-left:3px solid var(--or);font-size:17px;border-radius:0 14px 14px 0;background:rgba(255,122,47,.07)}
+@media(max-width:1000px){.flow{grid-template-columns:repeat(2,minmax(0,1fr))}.flow div::after{display:none}.cgrid{grid-template-columns:1fr}}
+@media(max-width:520px){.flow{grid-template-columns:1fr}.bar{grid-template-columns:96px minmax(0,1fr) 56px}}
+/* tracking timeline */
+.tl{position:relative;display:grid;gap:16px;padding-left:34px}
+.tl::before{content:"";position:absolute;left:11px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--or),var(--sea) 40%,rgba(95,224,198,.15))}
+.scan{position:relative;padding:20px 22px}
+.scan::before{content:"";position:absolute;left:-29px;top:26px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--sea)}
+.scan.now::before{border-color:var(--or);background:var(--or);box-shadow:0 0 0 6px rgba(255,122,47,.2)}
+.stop{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 14px;font-size:13.5px;color:var(--mute)}
+.stop .pill{font:700 11.5px Sora,sans-serif;color:var(--sea);border:1px solid rgba(95,224,198,.35);border-radius:999px;padding:2px 10px}
+.scan.now .pill{color:var(--or);border-color:rgba(255,122,47,.45)}
+.scan h3{margin:8px 0 2px}.scan .org{color:var(--am);font-weight:600;font-size:15px;margin-bottom:8px}
+.scan ul{margin:0;padding-left:18px;color:var(--mute);font-size:15px}.scan li{margin:3px 0}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.edu{padding:26px}.edu .gpa{font:800 40px Sora,sans-serif;margin:12px 0 8px}.edu .gpa span{font-size:16px;color:var(--mute);font-weight:600}
+.pub{padding:22px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 20px;align-items:center}
+.pub .by{font-size:13.5px;color:var(--mute);margin:4px 0 8px}
+.pubs{display:grid;gap:14px}
+.skills{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+@media(max-width:1000px){.skills{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.two,.skills{grid-template-columns:1fr}.pub{grid-template-columns:1fr}.pub .btn{justify-self:start}}
+/* contact */
+.contact .inner{border-radius:28px;padding:clamp(28px,5vw,64px);background:radial-gradient(600px 300px at 100% 0,rgba(255,194,75,.25),transparent 60%),linear-gradient(135deg,#c94c0c,var(--or) 55%,#ff9a4a);color:#1d0d02}
+.contact h2{font-size:clamp(36px,6vw,68px)}
+.contact .mute,.contact a{color:#2a1205}
+.cg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,60px);margin-top:28px}
+.cl{list-style:none;margin:0;padding:0;display:grid;gap:14px;font-size:17px;font-weight:600}
+.cl span{display:block;font-size:13px;font-weight:500;opacity:.75}
+form{display:grid;gap:12px}
+form label{display:grid;gap:5px;font-size:14px;font-weight:600}
+form input,form textarea{font:16px Inter,sans-serif;padding:12px 14px;border-radius:12px;border:1px solid rgba(29,13,2,.25);background:rgba(255,255,255,.35);color:#1d0d02;min-height:46px}
+form textarea{min-height:130px;resize:vertical}
+form .btn{background:#1d0d02;color:#fff;border:0;justify-self:start}
+.msg{font-size:15px;min-height:1.4em}
+@media(max-width:800px){.cg{grid-template-columns:1fr}}
+footer{padding:26px max(5vw,16px) 40px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;max-width:1200px;margin:0 auto;font-size:14px;color:var(--mute)}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header><nav class="nav" aria-label="Main">
+  <a class="logo" href="#top">Vaishnavi<b>.</b></a>
+  <ul id="links">
+    <li><a href="#about">About</a></li><li><a href="#work">Work</a></li><li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li><li><a href="#publications">Publications</a></li><li><a href="#skills">Skills</a></li><li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="btn pri hire" href="#contact">Let's talk</a>
+  <button class="btn menu" id="menu" aria-expanded="false" aria-controls="links" aria-label="Open menu">Menu</button>
+</nav></header>
+
+<main id="main">
+<section class="hero" id="top"><div class="wrap hgrid">
+  <div>
+    <div class="status"><i></i>Available for full-time roles from January 2027 · open to relocation</div>
+    <h1>Hi, I'm Vaishnavi<span class="dot">.</span><span class="role"><span class="outline">Supply Chain</span> <span class="grad">Planner</span></span></h1>
+    <p class="lead">I turn demand data into stocking decisions — the right materials, in the right quantity, at the right time. M.S. candidate at Purdue University Northwest with hands-on purchasing experience and published research in life sciences.</p>
+    <div class="tags"><span>Demand forecasting</span><span>Inventory planning</span><span>Procurement</span><span>Excel · Python</span></div>
+    <div class="ctas">
+      <a class="btn pri" href="#work">Explore my work <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12 12 4M5 4h7v7"/></svg></a>
+      <a class="btn" href="https://linkedin.com/in/vaishnavi-singh-14837a206">LinkedIn</a>
+      <a class="btn" href="https://github.com/Vaishnavi-singh-1">GitHub</a>
+    </div>
+  </div>
+  <div class="net" aria-hidden="true">
+    <svg viewBox="0 0 520 520">
+      <defs>
+        <radialGradient id="orb" cx="35%" cy="30%"><stop offset="0" stop-color="#ffb066"/><stop offset=".55" stop-color="#ff7a2f"/><stop offset="1" stop-color="#7a2a06"/></radialGradient>
+        <radialGradient id="halo"><stop offset="0" stop-color="#ff7a2f" stop-opacity=".45"/><stop offset="1" stop-color="#ff7a2f" stop-opacity="0"/></radialGradient>
+        <path id="p1" d="M95 150 Q260 30 425 150"/><path id="p2" d="M425 150 Q510 260 425 370"/><path id="p3" d="M425 370 Q260 490 95 370"/><path id="p4" d="M95 370 Q10 260 95 150"/>
+        <g id="box"><rect x="-9" y="-6" width="18" height="12" rx="2" fill="#ffc24b"/><path d="M-5-6v12M0-6v12M5-6v12" stroke="#8a5a00" stroke-width="1"/></g>
+      </defs>
+      <circle cx="260" cy="260" r="210" fill="url(#halo)"/>
+      <g class="ring"><circle cx="260" cy="260" r="150" fill="none" stroke="rgba(95,224,198,.25)" stroke-dasharray="2 10" stroke-width="2"/><circle cx="410" cy="260" r="5" fill="#5fe0c6"/></g>
+      <g class="ring r2"><ellipse cx="260" cy="260" rx="120" ry="40" fill="none" stroke="rgba(255,194,75,.35)" stroke-width="1.5"/><circle cx="140" cy="260" r="4" fill="#ffc24b"/></g>
+      <g fill="none" stroke-width="2.5"><use href="#p1" stroke="rgba(255,122,47,.7)" stroke-dasharray="6 6"/><use href="#p2" stroke="rgba(255,122,47,.7)" stroke-dasharray="6 6"/><use href="#p3" stroke="rgba(255,122,47,.7)" stroke-dasharray="6 6"/><use href="#p4" stroke="rgba(95,224,198,.45)" stroke-dasharray="2 7"/></g>
+      <g id="movers">
+        <use href="#box"><animateMotion dur="5s" repeatCount="indefinite" rotate="auto"><mpath href="#p1"/></animateMotion></use>
+        <use href="#box"><animateMotion dur="5s" begin="-1.7s" repeatCount="indefinite" rotate="auto"><mpath href="#p2"/></animateMotion></use>
+        <use href="#box"><animateMotion dur="5s" begin="-3.4s" repeatCount="indefinite" rotate="auto"><mpath href="#p3"/></animateMotion></use>
+        <circle r="4" fill="#5fe0c6"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#p4"/></animateMotion></circle>
+      </g>
+      <circle cx="260" cy="260" r="78" fill="url(#orb)"/><circle cx="260" cy="260" r="78" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2"/>
+      <ellipse cx="238" cy="228" rx="30" ry="16" fill="rgba(255,255,255,.22)"/>
+      <text x="260" y="276" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="46" fill="#fff">VS</text>
+      <g font-family="Sora,sans-serif" font-size="13" font-weight="700" fill="#eaf4f1" text-anchor="middle">
+        <g transform="translate(95 150)"><circle r="30" fill="#0d3332" stroke="rgba(234,244,241,.25)"/><path d="M-11-4 0-10l11 6v13L0 15l-11-6Z M-11-4 0 2l11-6M0 2v13" fill="none" stroke="#ffc24b" stroke-width="2"/><text y="50">Supplier</text></g>
+        <g transform="translate(425 150)"><circle r="30" fill="#0d3332" stroke="rgba(234,244,241,.25)"/><path d="M-13 12V-2l8 5v-5l8 5v-12h5v19Z" fill="none" stroke="#ffc24b" stroke-width="2"/><text y="50">Plant</text></g>
+        <g transform="translate(425 370)"><circle r="30" fill="#0d3332" stroke="rgba(234,244,241,.25)"/><path d="M-13 13V-3L0-12l13 9v16M-6 13V3h12v10" fill="none" stroke="#ffc24b" stroke-width="2"/><text y="50">Warehouse</text></g>
+        <g transform="translate(95 370)"><circle r="30" fill="#0d3332" stroke="rgba(234,244,241,.25)"/><path d="M-4-12h8v8h8v8h-8v8h-8v-8h-8v-8h8Z" fill="none" stroke="#5fe0c6" stroke-width="2"/><text y="50">Patient</text></g>
+      </g>
+    </svg>
+    <div class="chip" style="left:0;top:-1%"><b>91%</b>forecast accuracy</div>
+    <div class="chip" style="right:0;bottom:-1%"><b>90%</b>on-time delivery</div>
+    <div class="chip" style="left:0;bottom:-1%"><b>−21%</b>safety stock</div>
+    <div class="chip" style="right:0;top:-1%"><b>15+</b>POs a week</div>
+  </div>
+</div></section>
+
+<div class="ticker" aria-label="Plan, source, make, deliver, return"><div class="track" aria-hidden="true" id="track"></div></div>
+
+<section class="band" id="about"><div class="wrap about">
+  <article class="label rv" id="label" aria-label="Profile card">
+    <div class="lhead"><span>SHIP TO: YOUR TEAM</span><em>AVAILABLE</em></div>
+    <div class="photo" id="photo">VS<!-- To add your photo: <img src="photo.jpg" alt="Vaishnavi Singh"> --></div>
+    <span class="stamp">PRIORITY</span>
+    <div class="lbody">
+      <div class="r">Supply Chain Planning &amp; Procurement</div>
+      <h3>Vaishnavi<b>.</b></h3>
+      <div class="lrows"><div><span>From</span>Purdue Northwest</div><div><span>Arrives</span>January 2027</div><div><span>Origin</span>Hammond, IN</div><div><span>Route</span>Open to relocation</div></div>
+      <div class="barcode" id="bc"></div>
+      <div class="trk"><span>VS-PNW-2026</span><span>M.S. · 4.0 GPA</span></div>
+    </div>
+  </article>
+  <div>
+    <div class="kicker rv">About me</div>
+    <h2 class="rv">I started in science. Supply chain is where it led me.</h2>
+    <p class="rv" style="margin-top:22px">My B.Tech in Biotechnology and quality assurance internships at Britannia Industries and Dabur India showed me how much a manufacturing plant depends on the right materials arriving on time, in the right quantity, at the right quality. That curiosity led me to supply chain.</p>
+    <p class="rv mute">At Purdue University Northwest I'm completing an M.S. in Technology Leadership and Management with a 4.0 GPA, focused on global supply chain management and process optimization. I've put that into practice running day-to-day purchasing for three locations at Taco Pros, and in a forecasting and inventory model that turns demand data into concrete stocking decisions.</p>
+    <p class="rv mute">I enjoy work where data meets real operations: finding why a forecast missed, why a supplier is late, or why inventory is piling up — then fixing the process so it doesn't happen again.</p>
+    <div class="stats rv">
+      <div class="glass stat"><b>4.0</b><span>GPA, M.S. Technology Leadership</span></div>
+      <div class="glass stat"><b>91<sup>%</sup></b><span>forecast accuracy, 15-SKU model</span></div>
+      <div class="glass stat"><b>15<sup>%</sup></b><span>fewer stockouts and overstock waste</span></div>
+      <div class="glass stat"><b>90<sup>%</sup></b><span>on-time delivery from suppliers</span></div>
+      <div class="glass stat"><b>15<sup>+</sup></b><span>purchase orders a week, 3 sites</span></div>
+      <div class="glass stat"><b>3</b><span>Springer book chapters, 2025</span></div>
+    </div>
+    <div class="interests rv">
+      <div class="glass box"><h3>Roles I'm targeting</h3><ul class="chips"><li>Supply Planner</li><li>Material Planner</li><li>Buyer / Buyer Planner</li><li>Inventory Analyst</li><li>Demand Planning Analyst</li><li>Supply Chain Analyst</li></ul></div>
+      <div class="glass box"><h3>Industries</h3><ul class="chips"><li>Healthcare &amp; pharma</li><li>Medical devices &amp; diagnostics</li><li>Food &amp; consumer goods</li><li>Industrial manufacturing</li></ul><p style="margin-top:12px">Long-term: build resilient, data-driven supply chains for healthcare and life sciences, where availability directly affects people's health.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="band" id="work" style="padding-top:0"><div class="wrap">
+  <div class="head rv"><div><div class="kicker">Featured project</div><h2>Demand Forecasting &amp; Inventory Planning</h2></div><p>Python (pandas) · Excel · Nov 2026</p></div>
+  <p class="rv" style="font-size:18px;max-width:80ch">Many small and mid-sized manufacturers plan inventory with rules of thumb, like repeating last month's demand — causing stockouts on some items and cash tied up in others. I built an end-to-end planning model for 15 packaging SKUs on 36 months of demand to show how better forecasts cut inventory without hurting service.</p>
+  <div class="flow rv" style="margin-top:26px">
+    <div class="glass"><h3>Prepare data</h3><p>36 months of simulated demand with trend, seasonality and noise; train/test split.</p></div>
+    <div class="glass"><h3>Forecast</h3><p>Naive, moving average, seasonal naive, exponential smoothing, Holt-Winters — best per SKU by MAPE/WAPE.</p></div>
+    <div class="glass"><h3>Plan inventory</h3><p>Safety stock and reorder points at a 95% service level.</p></div>
+    <div class="glass"><h3>Measure impact</h3><p>Inventory under improved vs naive forecasts, in dollars.</p></div>
+    <div class="glass"><h3>Deliver</h3><p>Python notebook, charts and an Excel plan a planner can use without code.</p></div>
+  </div>
+  <div class="cgrid">
+    <div class="glass panel rv">
+      <h3>Forecast vs actual demand</h3>
+      <div class="ckey"><span><i></i>Actual</span><span><i class="f"></i>Forecast</span><span><i class="s"></i>Safety-stock buffer</span><span><i class="r"></i>Reorder point</span></div>
+      <div class="fig" id="chart"><svg role="img" aria-label="Monthly demand over 36 months with a forecast line tracking it closely, a shaded buffer band and a reorder line"></svg></div>
+      <div class="note">Illustrative SKU in the style of the model. Shaded months are the test period.</div>
+    </div>
+    <div class="glass panel rv">
+      <h3>Results</h3>
+      <div class="bars">
+        <div class="note">Forecast error (WAPE), lower is better</div>
+        <div class="bar"><span>Naive</span><div><i style="width:100%"></i></div><em>14.9%</em></div>
+        <div class="bar best"><span>Best per SKU</span><div><i style="width:59.7%"></i></div><em>8.9%</em></div>
+        <div class="note" style="margin-top:6px">Total safety stock at 95% service</div>
+        <div class="bar"><span>Naive</span><div><i style="width:100%"></i></div><em>$80.1K</em></div>
+        <div class="bar best"><span>Improved</span><div><i style="width:79%"></i></div><em>$63.3K</em></div>
+      </div>
+      <div class="calc">
+        <h3>Try the safety-stock formula</h3>
+        <div class="note">Safety stock = Z × RMSE × √(lead time)</div>
+        <label for="sl">Service level <output id="slo"></output><input id="sl" type="range" min="80" max="99.5" step="0.5" value="95"></label>
+        <label for="rm">Forecast error, RMSE (units/month) <output id="rmo"></output><input id="rm" type="range" min="10" max="400" step="5" value="120"></label>
+        <label for="lt">Supplier lead time <output id="lto"></output><input id="lt" type="range" min="0.25" max="4" step="0.25" value="1"></label>
+        <div class="res"><b id="ss"></b><span id="sz" class="note"></span></div>
+      </div>
+    </div>
+  </div>
+  <p class="lesson rv">“Better forecasts matter most when they change a decision. The real value appeared only after connecting forecast accuracy to safety stock, reorder points and cash.”</p>
+  <div class="rv" style="margin-top:22px"><a class="btn pri" href="https://github.com/Vaishnavi-singh-1/demand-forecasting-inventory-planning">View the repository on GitHub <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12 12 4M5 4h7v7"/></svg></a></div>
+</div></section>
+
+<section class="band" id="experience" style="padding-top:0"><div class="wrap">
+  <div class="head rv"><div><div class="kicker">Shipment history</div><h2>Experience</h2></div><p>Purchasing, supplier follow-up, reporting and quality — every stop on the route.</p></div>
+  <div class="tl" id="jobs"></div>
+</div></section>
+
+<section class="band" id="education" style="padding-top:0"><div class="wrap">
+  <div class="head rv"><div><div class="kicker">Education</div><h2>Where I trained</h2></div></div>
+  <div class="two">
+    <div class="glass edu rv"><div class="note">Jan 2025 – Dec 2026 · Hammond, IN</div><h3 style="margin-top:8px;font-size:21px">M.S. Technology Leadership and Management</h3><div style="color:var(--am);font-weight:600">Purdue University Northwest</div><div class="gpa">4.0 <span>/ 4.0 GPA</span></div>
+      <p class="mute" style="font-size:15px"><b style="color:var(--ink)">Coursework:</b> Global Supply Chain Management, Quality &amp; Productivity, Process Optimization, Project Management.</p>
+      <p class="mute" style="font-size:15px;margin:0"><b style="color:var(--ink)">Focus:</b> demand and supply planning, MRP and S&amp;OP concepts, lean process improvement, data-driven decisions.</p></div>
+    <div class="glass edu rv"><div class="note">Sep 2020 – Aug 2024 · Lucknow, India</div><h3 style="margin-top:8px;font-size:21px">B.Tech in Biotechnology</h3><div style="color:var(--am);font-weight:600">Shri Ramswaroop Memorial University</div><div class="gpa">8.32 <span>/ 10 GPA</span></div>
+      <p class="mute" style="font-size:15px;margin:0">Foundation in life sciences, laboratory quality practices and manufacturing documentation.</p></div>
+  </div>
+</div></section>
+
+<section class="band" id="publications" style="padding-top:0"><div class="wrap">
+  <div class="head rv"><div><div class="kicker">Research</div><h2>Publications</h2></div><p>Book chapters in <i>The Future of Plant Protein</i> (Springer, 2025) · 7 combined citations</p></div>
+  <div class="pubs" id="pubs"></div>
+</div></section>
+
+<section class="band" id="skills" style="padding-top:0"><div class="wrap">
+  <div class="head rv"><div><div class="kicker">Toolkit</div><h2>Skills &amp; certifications</h2></div></div>
+  <div class="skills" id="sk"></div>
+  <div class="two" style="margin-top:14px">
+    <div class="glass box rv"><h3>Certifications</h3><ul class="chips"><li>Google Project Management Certificate</li><li>Python for Data Science and Machine Learning</li></ul></div>
+    <div class="glass box rv"><h3>Work authorization</h3><p>F-1 student, eligible for OPT after graduating in December 2026, with up to 3 years of work authorization through the STEM OPT extension.</p></div>
+  </div>
+</div></section>
+
+<section class="band contact" id="contact" style="padding-top:0"><div class="wrap inner rv">
+  <h2>Let's keep things moving.</h2>
+  <p class="mute" style="font-size:18px;margin-top:14px">Looking for supply planning, buying and inventory analytics roles from January 2027 — especially in healthcare, life sciences and manufacturing.</p>
+  <div class="cg">
+    <ul class="cl">
+      <li><span>Email</span><a href="mailto:singh1904vaishnavi@gmail.com">singh1904vaishnavi@gmail.com</a></li>
+      <li><span>Phone</span><a href="tel:+12192984701">+1 (219) 298-4701</a></li>
+      <li><span>LinkedIn</span><a href="https://linkedin.com/in/vaishnavi-singh-14837a206">vaishnavi-singh-14837a206</a></li>
+      <li><span>GitHub</span><a href="https://github.com/Vaishnavi-singh-1">Vaishnavi-singh-1</a></li>
+      <li><span>Location</span>Hammond, Indiana (Chicago area)</li>
+    </ul>
+    <form id="cf" novalidate>
+      <label for="n">Your name<input id="n" autocomplete="name" required></label>
+      <label for="e">Your email<input id="e" type="email" autocomplete="email" required></label>
+      <label for="m">Message<textarea id="m" required></textarea></label>
+      <button class="btn" type="submit">Write the email</button>
+      <div class="msg" id="msg" aria-live="polite"></div>
+    </form>
+  </div>
+</div></section>
+</main>
+<footer><span>© 2026 Vaishnavi Singh · Plan · Source · Make · Deliver</span><a href="#top">Back to top ↑</a></footer>
+
+<script>
+{
+const $=id=>document.getElementById(id);
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(reduce){const mv=$('movers');mv&&mv.remove()}
+const words=['Plan','Source','Make','Deliver','Return','Forecast','Replenish','Optimize'];
+$('track').innerHTML=[...words,...words].map(w=>`<span>${w}</span>`).join('');
+
+const jobs=[
+ {k:1,w:"May 2026 – Aug 2026",s:"Latest stop",t:"Supply Chain Intern",o:"Taco Pros Mexican Cocina · Dyer, IN",b:["Managed purchasing for proteins, produce, dairy and packaging across 3 restaurant locations, placing and tracking 15+ purchase orders per week.","Analyzed weekly usage and sales trends to adjust order quantities, reducing stockouts and overstock waste by 15%.","Followed up with vendors and distributors on late or incomplete deliveries, improving on-time delivery to 90%.","Built a centralized Excel tracker of supplier performance, lead times and PO history that flagged at-risk orders before they caused shortages.","Prepared weekly inventory and cost reports with recommendations for operations leadership."]},
+ {w:"Feb 2025 – Dec 2025",s:"Delivered",t:"Grader Assistant",o:"Purdue University Northwest · Hammond, IN",b:["Reviewed large volumes of academic work against standardized criteria, ensuring accuracy and consistency.","Maintained detailed grade records and tracked performance metrics in line with university reporting standards."]},
+ {w:"May 2025 – Aug 2025",s:"Delivered",t:"Building Service Worker",o:"Purdue University Northwest · Hammond, IN",b:["Supported daily supply tracking and material handling for campus facilities in a high-traffic environment.","Improved task sequencing and supply availability, raising on-time task completion by 10%.","Worked with maintenance and operations teams to resolve service requests promptly."]},
+ {w:"Feb 2025 – May 2025",s:"Delivered",t:"Student Assistant, Accessibility Center",o:"Purdue University Northwest · Hammond, IN",b:["Coordinated scheduling and service requests for students, faculty and staff.","Maintained accurate records and prepared usage reports in Microsoft Office to support service planning."]},
+ {w:"May 2021 – Nov 2024",s:"Delivered",t:"Client Relationship Manager (Part-time)",o:"Webree Ventures · Remote",b:["Coordinated communication between clients and internal teams to keep projects on schedule, escalating issues early.","Built Excel performance reports for clients with marketing, analytics and operations teams to support business decisions.","Maintained project documentation tracking status, deliverables and next steps."]},
+ {w:"Feb 2023 – Jul 2023",s:"Delivered",t:"Quality Assurance Intern",o:"Britannia Industries Limited · Lucknow, India",b:["Monitored product standards and inspection checkpoints in FMCG food manufacturing, documenting compliance and traceability across production and supply stages.","Worked with production teams to identify process deviations and maintain consistent quality."]},
+ {w:"Jan 2023 – Feb 2023",s:"Origin",t:"Quality Assurance Intern",o:"Dabur India Limited · Ghaziabad, India",b:["Monitored product quality standards and completed inspection documentation in consumer health manufacturing.","Recorded quality and process observations that supported compliance and operational reporting."]}];
+$('jobs').innerHTML=jobs.map(j=>`<article class="glass scan rv${j.k?' now':''}"><div class="stop"><span>${j.w}</span><span class="pill">${j.s}</span></div><h3>${j.t}</h3><div class="org">${j.o}</div><ul>${j.b.map(x=>`<li>${x}</li>`).join('')}</ul></article>`).join('');
+
+const pubs=[
+ {t:"Sustainability of Plant Protein",a:"Singh, V., Yousuf, O., & Prasad, S. · first author · pp. 51–72",d:"Plant protein as a sustainable alternative to animal protein: nutrition, resource use and environmental impact, and ways to improve bioavailability.",u:"https://link.springer.com/chapter/10.1007/978-981-96-4190-1_3"},
+ {t:"Sensory Properties of Plant Protein Products",a:"Prasad, S., Yadav, S., Babulal, K. S., Singh, V., & Mishra, S. · pp. 163–207",d:"What drives consumer acceptance of plant-based protein products: taste, texture, health beliefs and purchasing behavior.",u:"https://link.springer.com/chapter/10.1007/978-981-96-4190-1_7"},
+ {t:"Plant Protein and Human Health",a:"Gupta, E., Singh, V., & Prasad, S. · pp. 231–253",d:"Protein quality, digestibility and the health effects of plant-based protein diets.",u:"https://link.springer.com/chapter/10.1007/978-981-96-4190-1_9"}];
+$('pubs').innerHTML=pubs.map(x=>`<article class="glass pub rv"><div><h3>${x.t}</h3><div class="by">${x.a}</div><p class="mute" style="margin:0;font-size:15px">${x.d}</p></div><a class="btn" href="${x.u}">Read on Springer</a></article>`).join('');
+
+const esc=s=>s.replace(/&/g,'&amp;');
+const sk=[["Supply chain",["Demand forecasting","Inventory planning","Safety stock & reorder points","Service level analysis","PO management & expediting","Supplier performance tracking","MRP & S&OP concepts","Excess & slow-moving inventory","Process improvement"]],
+ ["Data & tools",["Excel: pivots, XLOOKUP, SUMIFS","Python: pandas, NumPy, Matplotlib","SQL (basic)","Jupyter / Google Colab","GitHub","Microsoft Office Suite"]],
+ ["Quality",["Inspection documentation","Compliance & traceability","Manufacturing quality checks"]],
+ ["Professional",["Cross-functional communication","Stakeholder coordination","Problem solving","Attention to detail","Data-driven reporting"]]];
+$('sk').innerHTML=sk.map(([h,l])=>`<div class="glass box rv"><h3>${esc(h)}</h3><ul class="chips">${l.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`).join('');
+
+let seed=11;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+$('bc').innerHTML=Array.from({length:46},()=>`<i style="width:${1+Math.floor(rnd()*4)}px;margin-right:${rnd()<.3?3:0}px"></i>`).join('');
+
+/* forecast chart (illustrative) */
+const act=[],fc=[];for(let i=0;i<36;i++){const b=900+i*14+170*Math.sin((i-2)/12*2*Math.PI);fc.push(b+(rnd()-.5)*50);act.push(b+(rnd()-.5)*160)}
+const svg=document.querySelector('#chart svg'),box=$('chart');
+const draw=()=>{const W=box.clientWidth,H=box.clientHeight,sm=W<480,L=sm?6:40,R=6,T=10,B=26,mn=500,mx=1700;
+ const x=i=>L+(W-L-R)*i/35,y=v=>T+(H-T-B)*(1-(v-mn)/(mx-mn));
+ const path=a=>a.map((v,i)=>(i?'L':'M')+x(i).toFixed(1)+' '+y(v).toFixed(1)).join('');
+ const band=fc.map((v,i)=>(i?'L':'M')+x(i).toFixed(1)+' '+y(v+150).toFixed(1)).join('')+fc.slice().reverse().map((v,j)=>'L'+x(35-j).toFixed(1)+' '+y(v-150).toFixed(1)).join('')+'Z';
+ let g='';if(!sm)[600,900,1200,1500].forEach(v=>g+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="rgba(234,244,241,.08)"/><text x="${L-8}" y="${y(v)+4}" text-anchor="end" font-size="11" fill="#9dbab4">${v}</text>`);
+ const yrs=['Year 1','Year 2','Year 3'].map((t,k)=>`<text x="${x(k*12+5.5)}" y="${H-6}" text-anchor="middle" font-size="12" fill="#9dbab4">${t}</text>`).join('');
+ svg.innerHTML=`<rect x="${x(24)}" y="${T}" width="${x(35)-x(24)}" height="${H-T-B}" fill="rgba(255,255,255,.04)" rx="6"/>${g}<path d="${band}" fill="rgba(95,224,198,.14)"/><path d="${path(fc.map(v=>v*.82+150))}" fill="none" stroke="#ff7a2f" stroke-width="2.5"/><path d="${path(fc)}" fill="none" stroke="#5fe0c6" stroke-width="2.5" stroke-dasharray="7 5"/><path d="${path(act)}" fill="none" stroke="#eaf4f1" stroke-width="2.5" stroke-linejoin="round"/>${act.map((v,i)=>`<circle cx="${x(i)}" cy="${y(v)}" r="${sm?2:3}" fill="#eaf4f1"/>`).join('')}${yrs}`};
+const ro=new ResizeObserver(draw);ro.observe(box);
+
+/* safety stock calculator */
+const zOf=p=>{const q=p/100,a=[-39.696830,220.946098,-275.928510,138.357751,-30.664798,2.506628],b=[-54.476098,161.585836,-155.698979,66.801311,-13.280681],c=[-0.007784894,-0.32239645,-2.400758,-2.549732,4.374664,2.938163],d=[0.007784695,0.32246712,2.445134,3.754408];
+ if(q>0.97575){const t=Math.sqrt(-2*Math.log(1-q));return -(((((c[0]*t+c[1])*t+c[2])*t+c[3])*t+c[4])*t+c[5])/((((d[0]*t+d[1])*t+d[2])*t+d[3])*t+1)}
+ const t=q-.5,r=t*t;return (((((a[0]*r+a[1])*r+a[2])*r+a[3])*r+a[4])*r+a[5])*t/(((((b[0]*r+b[1])*r+b[2])*r+b[3])*r+b[4])*r+1)};
+const calc=()=>{const s=+$('sl').value,r=+$('rm').value,l=+$('lt').value,z=zOf(s);
+ $('slo').textContent=s+'%';$('rmo').textContent=r+' units';$('lto').textContent=l+(l===1?' month':' months');
+ $('ss').textContent=Math.round(z*r*Math.sqrt(l)).toLocaleString()+' units';$('sz').textContent=`Z = ${z.toFixed(2)} at ${s}% service`};
+['sl','rm','lt'].forEach(i=>$(i).addEventListener('input',calc));calc();
+
+/* tilt on the shipping label */
+const lb=$('label');
+if(!reduce&&matchMedia('(hover:hover)').matches){lb.addEventListener('mousemove',e=>{const r=lb.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;lb.style.transform=`perspective(900px) rotateY(${px*10}deg) rotateX(${-py*10}deg)`});lb.addEventListener('mouseleave',()=>lb.style.transform='')}
+
+/* menu */
+const mb=$('menu'),ul=$('links');mb.addEventListener('click',()=>{const o=ul.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+ul.addEventListener('click',e=>{if(e.target.tagName==='A'){ul.classList.remove('open');mb.setAttribute('aria-expanded',false)}});
+
+/* contact form: opens the visitor's email app */
+$('cf').addEventListener('submit',e=>{e.preventDefault();const n=$('n').value.trim(),em=$('e').value.trim(),m=$('m').value.trim(),msg=$('msg');
+ if(!n||!/^\S+@\S+\.\S+$/.test(em)||!m){msg.textContent='Please add your name, a valid email and a message.';return}
+ const a=document.createElement('a');a.href='mailto:singh1904vaishnavi@gmail.com?subject='+encodeURIComponent('Hello from '+n)+'&body='+encodeURIComponent(m+'\n\n— '+n+' ('+em+')');a.click();
+ msg.textContent='Your email app should open with the message ready. If not, write to singh1904vaishnavi@gmail.com.'});
+
+/* reveal on scroll */
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+}
+</script>
+</body>
+</html>
